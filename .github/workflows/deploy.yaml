@@ -37,3 +37,9 @@ jobs:
     steps:
       - name: Log
         run: echo "Deploying Worker Application to Production"
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: workerapp-artifact
+      - name: output files
+        run: ls -R
