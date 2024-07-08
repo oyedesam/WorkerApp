@@ -6,6 +6,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    #Output example
+    outputs:
+      # Format - StepsObject.Id of step.Outputs(field defined by github actions).name of output defined in the step
+      output-text: ${{ steps.example.outputs.test}}
     steps:
         - name: Checkout Repository
           uses: actions/checkout@v4
@@ -28,6 +32,10 @@ jobs:
           with:
             name: workerapp-artifact
             path: ./workerapp-release
+        # Output example 
+        - name: output text example
+          id: example
+          run: echo "test=Home is where I belong!!!!!" >> "$GITHUB_OUTPUT"
 
 
             
@@ -43,3 +51,10 @@ jobs:
           name: workerapp-artifact
       - name: output files
         run: ls -R
+
+      - name: Output Text From Build Job
+      #output-text is the identifier in the build job
+        run: echo "${{ needs.build.outputs.output-text}}"
+
+
+# Output gives the capabilities to pass data between jobs 
