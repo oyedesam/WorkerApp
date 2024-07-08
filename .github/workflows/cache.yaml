@@ -2,7 +2,7 @@
 
 # Reducing the time it takes helps our workflow run faster
 
-name: Deploy Worker to Production
+name: Cache  Worker Dependecies
 on:
   push:
     branches:
