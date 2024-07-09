@@ -56,6 +56,14 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
+      - name: Cache Dependencies
+        uses: actions/cache@v3
+        with:
+          #Path we are trying to cache and also the cache must have a key which is used for retrieval
+          path: ~/.nuget/packages
+          # Produces a unique hashvalue based on the changes in the file passed to it, The hashvalue changes wnehever the file changes. In the case of .net, it is a csproj file
+          key: deps-nuget-$${{ hashFiles('**/*.csproj')}}
+
       - name: Restore Application dependencies
         run: dotnet restore
       - name: Log
