@@ -31,3 +31,8 @@ jobs:
           with:
             name: resuable-artifact
             path: ./resuable-artifact
+
+    deploy:
+        uses: ./.github/workflows/publish.yaml
+        with:
+            artifacts-name: resuable-artifact

@@ -8,13 +8,6 @@ on:
             type: string
             required: true
             description: 'The name of the artifact to download'
-
-        workflow_file:
-            type: string
-            required: true
-            description: 'The file of the workflow to run'
-
-
 jobs:
     deploy:
         runs-on: ubuntu-latest
