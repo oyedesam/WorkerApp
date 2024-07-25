@@ -1,4 +1,4 @@
-name: Deploy Worker to Production
+name: Output Example Workflow
 on:
   push:
     branches:
@@ -58,3 +58,4 @@ jobs:
 
 
 # Output gives the capabilities to pass data between jobs 
+# Output can be used with Artifacts to pass data between jobs
