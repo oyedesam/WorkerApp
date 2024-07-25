@@ -1,6 +1,8 @@
 name: Resuable Deploy Application
 
 # This workflow would be called by the build workflow to deploy the application
+# You can aslo use the output from the build workflow to pass data to this workflow
+# Think of it as a function call in programming
 on: 
   workflow_call:
     inputs:
@@ -8,8 +10,16 @@ on:
             type: string
             required: true
             description: 'The name of the artifact to download'
+    outputs:
+        deployment-status:
+            description: 'The status of the deployment'
+            value: ${{ jobs.deploy.outputs.deployment-status }}
+            
 jobs:
     deploy:
+        outputs:
+            deployment-status: ${{ steps.deploy-status.outputs.status }}
+
         runs-on: ubuntu-latest
         steps:
             - name: Download Artifacts
@@ -22,3 +32,7 @@ jobs:
 
             - name: Deploy Application
               run: echo "Deploying Application to Production"
+
+            - name: Output Deployment Status
+              id: deploy-status
+              run: echo "status=Deployment Successful" >> $GITHUB_OUTPUT

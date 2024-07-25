@@ -37,3 +37,11 @@ jobs:
         uses: ./.github/workflows/publish.yaml
         with:
             artifacts-name: resuable-artifact
+
+            # Print results of the deploy job 
+    print-status:
+        needs: deploy
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print Deployment Status
+              run: echo " Deployment status - ${{ needs.deploy.outputs.deployment-status }}"
