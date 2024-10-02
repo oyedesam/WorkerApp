@@ -2,13 +2,7 @@ changelog:
   categories:
     - title: 🚀 Features
       labels:
-        - bug
+        - release-scheduled
     - title: 🐛 Bug Fixes
       labels:
         - bug
-    - title: 🚀 Breaking Changes
-      labels:
-        - bug
-    - title: Other Changes
-      labels:
-        - "*" # Catch-all for pull requests that didn't match any of the previous categories
