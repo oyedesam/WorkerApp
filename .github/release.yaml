@@ -8,4 +8,4 @@ changelog:
           - '*'
     - title: 🚀 Releases
       labels:
-        - 'release-scheduled'
+        - release-scheduled
