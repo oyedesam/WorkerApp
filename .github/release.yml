@@ -1,19 +1,14 @@
 changelog:
-  exclude:
-    labels:
-      - skip-changelog
-    authors:
-      - dependabot[bot]
   categories:
     - title: 🚀 Features
       labels:
-        - release-scheduled
+        - bug
     - title: 🐛 Bug Fixes
       labels:
-        - release-scheduled
+        - bug
     - title: 🚀 Breaking Changes
       labels:
-        - release-scheduled
+        - bug
     - title: Other Changes
       labels:
         - "*" # Catch-all for pull requests that didn't match any of the previous categories
