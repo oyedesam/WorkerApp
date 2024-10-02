@@ -1,8 +1,11 @@
 changelog:
   categories:
-    - title: 🏕 Features
+    - title: Breaking Changes 🛠
       labels:
         - release-scheduled
-    - title: 👒 Dependencies
+    - title: Exciting New Features 🎉
       labels:
-        - dependencies
+        - release-scheduled
+    - title: Other Changes
+      labels:
+        - "*"
