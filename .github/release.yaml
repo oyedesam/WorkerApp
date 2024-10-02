@@ -1,11 +1,8 @@
 changelog:
   categories:
-    - title: 📝 Authors
-      labels:
-        - '*'
-      include:
-        authors:
-          - '*'
-    - title: Exciting New Features 🎉
+    - title: 🏕 Features
       labels:
         - release-scheduled
+    - title: 👒 Dependencies
+      labels:
+        - dependencies
