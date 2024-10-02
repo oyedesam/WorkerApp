@@ -1,11 +1,8 @@
 changelog:
   categories:
-    - title: 🏕 Features
+    - title: 📝 Authors
       labels:
         - '*'
-      exclude:
-        labels:
-          - dependencies
-    - title: 👒 Dependencies
-      labels:
-        - dependencies
+      include:
+        authors:
+          - '*'
