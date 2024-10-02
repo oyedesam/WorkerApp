@@ -6,6 +6,6 @@ changelog:
       include:
         authors:
           - '*'
-    - title: 🚀 Features
+    - title: 🚀 Releases
       labels:
-        - 'feature'
+        - 'release-scheduled'
