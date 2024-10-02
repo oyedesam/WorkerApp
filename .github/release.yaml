@@ -6,6 +6,6 @@ changelog:
       include:
         authors:
           - '*'
-    - title: 🚀 Releases
+    - title: Exciting New Features 🎉
       labels:
         - release-scheduled
