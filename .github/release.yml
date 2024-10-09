@@ -16,3 +16,6 @@ changelog:
     - title: 🔗 Jira Issues
       labels:
         - jira
+    - title: 🚧 In Progress
+      labels:
+        - in-progress
