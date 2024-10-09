@@ -20,4 +20,4 @@ jobs:
           run: echo "${{ github.event.head_commit.timestamp }}"
         - name: Email
           run: |
-            echo "${{ toJson(github.event.commits) }}" | jq -r '.[].committer.email'
+            echo '${{ toJson(github.event.commits) }}' | jq -r '.[].committer.email'
