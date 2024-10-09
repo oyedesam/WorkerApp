@@ -1,0 +1,10 @@
+name: Generate Release Notes
+
+on: push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Testing
+          run: echo "Testomg Generating Release Actions"
