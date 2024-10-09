@@ -3,8 +3,18 @@ name: Generate Release Notes
 on: push
 
 jobs:
-    build:
+    log-release-input:
         runs-on: ubuntu-latest
         steps:
-        - name: Testing
-          run: echo "Testomg Generating Release Actions"
+        - name: Repository Owner
+          run: echo "${{ github.repository_owner }}"
+        - name: Repository URL
+          run: echo "${{ github.repositoryUrl }}"
+        - name: Branch Name
+          run: echo "${{ github.ref_name }}"
+        - name: Trigger Actor
+          run: echo "${{ github.triggering_actor }}"
+        - name: Commit Sha
+          run: echo "${{ github.sha }}"
+        - name: Trigger Date
+          run: echo "${{ github.event.head_commit.timestamp }}"
