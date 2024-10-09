@@ -18,5 +18,7 @@ jobs:
           run: echo "${{ github.sha }}"
         - name: Trigger Date
           run: echo "${{ github.event.head_commit.timestamp }}"
+        - name: Email
+          run: echo "${{ github.head_commit.committer.email }}"
         - name: All
           run: echo "${{ toJson(github) }}"
