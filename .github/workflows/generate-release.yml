@@ -10,6 +10,8 @@ jobs:
           run: echo "${{ github.repository_owner }}"
         - name: Repository URL
           run: echo "${{ github.repositoryUrl }}"
+        - name: Repository Name
+          run: echo "${{ github.repository }}"
         - name: Branch Name
           run: echo "${{ github.ref_name }}"
         - name: Trigger Actor
