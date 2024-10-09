@@ -6,3 +6,13 @@ changelog:
     - title: 🐛 Bug Fixes
       labels:
         - bug
+    - title: 🧰 Maintenance
+      labels:
+        - maintenance
+        - bau
+    - title: 📚 Documentation
+      labels:
+        - documentation
+    - title: 🔗 Jira Issues
+      labels:
+        - jira
