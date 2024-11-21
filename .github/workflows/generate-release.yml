@@ -1,0 +1,28 @@
+name: Generate Release Notes
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+    log-release-input:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Repository Owner
+          run: echo "${{ github.repository_owner }}"
+        - name: Repository URL
+          run: echo "${{ github.repositoryUrl }}"
+        - name: Repository Name
+          run: echo "${{ github.repository }}"
+        - name: Branch Name
+          run: echo "${{ github.ref_name }}"
+        - name: Trigger Actor
+          run: echo "${{ github.triggering_actor }}"
+        - name: Commit Sha
+          run: echo "${{ github.sha }}"
+        - name: Trigger Date
+          run: echo "${{ github.event.head_commit.timestamp }}"
+        - name: Email
+          run: |
+            echo '${{ toJson(github.event.commits) }}' | jq -r '.[].committer.email'
