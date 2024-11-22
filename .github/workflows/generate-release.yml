@@ -26,3 +26,8 @@ jobs:
         - name: Email
           run: |
             echo '${{ toJson(github.event.commits) }}' | jq -r '.[].committer.email'
+
+
+
+
+# test
