@@ -6,29 +6,40 @@ on:
   workflow_dispatch:
 
 jobs:
-    log-release-input:
+    generate-release-notes:
         runs-on: ubuntu-latest
         steps:
-        - name: Repository Owner
-          run: echo "${{ github.repository_owner }}"
-        - name: Repository URL
-          run: echo "${{ github.repositoryUrl }}"
-        - name: Repository Name
-          run: echo "${{ github.repository }}"
-        - name: Branch Name
-          run: echo "${{ github.ref_name }}"
-        - name: Trigger Actor
-          run: echo "${{ github.triggering_actor }}"
-        - name: Commit Sha
-          run: echo "${{ github.sha }}"
-        - name: Trigger Date
-          run: echo "${{ github.event.head_commit.timestamp }}"
-        - name: Email
-          run: |
-            echo '${{ toJson(github.event.commits) }}' | jq -r '.[].committer.email'
-            echo '${{ toJson(github.event.commits) }}' | jq -r '.[].committer.name'
+        - name: Generate Release Documents
+          uses:  LexisNexis-RBA/dsg-icis-release-doc-generator-action@dev
+          with:
+            token: ${{ secrets.TOKEN }}
+            repo_owner: ${{ github.repository_owner }}
+            repo_name: ${{ github.repository }}
+            release_branch: ${{ github.ref_name }}
+            tagger_name: ${{ github.triggering_actor }}
+            tagger_email: ${{ toJson(github.event.commits) }}' | jq -r '.[].committer.email
+            tag_date: ${{  github.event.head_commit.timestamp }}
+            latest_commit: ${{ github.sha }}
+            release_template_file: .github/release-template.md
+            semantic_version: minor
 
 
 
 
-# test
+        # - name: Repository Owner
+        #   run: echo "${{ github.repository_owner }}"
+        # - name: Repository URL
+        #   run: echo "${{ github.repositoryUrl }}"
+        # - name: Repository Name
+        #   run: echo "${{ github.repository }}"
+        # - name: Branch Name
+        #   run: echo "${{ github.ref_name }}"
+        # - name: Trigger Actor
+        #   run: echo "${{ github.triggering_actor }}"
+        # - name: Commit Sha
+        #   run: echo "${{ github.sha }}"
+        # - name: Trigger Date
+        #   run: echo "${{ github.event.head_commit.timestamp }}"
+        # - name: Email
+        #   run: echo '${{ toJson(github.event.commits) }}' | jq -r '.[].committer.email'
+
